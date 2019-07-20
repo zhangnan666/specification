@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS编码规范 | 前端开发规范</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/manual/assets/css/0.styles.d27e47f1.css" as="style"><link rel="preload" href="/manual/assets/js/app.0f33cce5.js" as="script"><link rel="preload" href="/manual/assets/js/2.fc9d38fd.js" as="script"><link rel="preload" href="/manual/assets/js/6.1a5b528c.js" as="script"><link rel="prefetch" href="/manual/assets/js/3.1a3a23bb.js"><link rel="prefetch" href="/manual/assets/js/4.7bf71852.js"><link rel="prefetch" href="/manual/assets/js/5.7521dc39.js"><link rel="prefetch" href="/manual/assets/js/7.7241f139.js"><link rel="prefetch" href="/manual/assets/js/8.35e7ec3f.js"><link rel="prefetch" href="/manual/assets/js/9.cfb529d6.js">
+    <link rel="stylesheet" href="/manual/assets/css/0.styles.d27e47f1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/manual/" class="home-link router-link-active"><!----> <span class="site-name">前端开发规范</span></a> <div class="links"><!----> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>介绍</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/manual/" class="sidebar-link">说明</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>编码规范</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/manual/standard/CSS.html" class="active sidebar-link">CSS编码规范</a></li><li><a href="/manual/standard/HTML.html" class="sidebar-link">HTML编码规范</a></li><li><a href="/manual/standard/JavaScript.html" class="sidebar-link">JavaScript编码规范</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="css编码规范"><a href="#css编码规范" aria-hidden="true" class="header-anchor">#</a> CSS编码规范</h1> <h2 id="代码格式"><a href="#代码格式" aria-hidden="true" class="header-anchor">#</a> 代码格式</h2> <ul><li>用class选择器来代替id选择器。</li> <li>如果属性值为0，则不需要为0加单位,如：<code>padding-left: 0;</code></li> <li>0~1的小数，前面的0可以省略不写,如：<code>transition: transform .5s;</code></li> <li>用16进制表示颜色时，字母均采用小写，如：<code>background-color:#13b5b1;</code></li> <li>每条规则结束后都必须加上分号。</li> <li>背景图引用资源时资源名不需要加引号，如：<code>background-image: url(../a.png);</code></li> <li>当使用LESS或SCSS时，注释可使用 //... 来代替 /*...*/ ，因为//注释符不会出现在LESS或SCSS文件在打包后的CSS文件中。</li> <li>组件内书写style样式表必须添加<strong>scoped</strong>属性限制命名空间，防止类名污染到全局。</li> <li>伪类前缀使用一个冒号<code>:</code>，而伪元素前缀必须采用两个冒号<code>::</code>，如<code>.author::before</code>。这是为了将伪元素与伪类严格区分开来，避免混淆。</li></ul> <div class="tip custom-block"><p class="custom-block-title">说明</p> <p>在CSS3中，新增的伪元素前缀必须采用两个冒号以便和伪类区分开来，但由于历史原因，CSS1和CSS2已存在的伪元素没有做区别，造成单冒号、双冒号混用滥用的乱象。为了规范化书写，伪元素前缀为双冒号，伪类前缀为单冒号。</p></div> <ul><li>当属性不需要继承时，使用简写将使得代码更加简洁，如：</li></ul> <div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.author</span> <span class="token punctuation">{</span>
+    <span class="token property">border-width</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+    <span class="token property">border-style</span><span class="token punctuation">:</span> solid<span class="token punctuation">;</span>
+    <span class="token property">border-color</span><span class="token punctuation">:</span> #ff0000<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token property">line-height</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">&quot;Microsoft YaHei&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* good */</span>
+<span class="token selector">.author</span> <span class="token punctuation">{</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 2px solid #ff0000<span class="token punctuation">;</span>
+    <span class="token property">font</span><span class="token punctuation">:</span> bold 20px<span class="token operator">/</span>30px <span class="token string">&quot;Microsoft YaHei&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>当属性需要继承时，不要使用简写，如：</li></ul> <div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">/* bad */</span>
+<span class="token selector">.article</span> <span class="token punctuation">{</span>
+　　　<span class="token property">font</span><span class="token punctuation">:</span> bold 20px <span class="token string">&quot;Microsoft YaHei&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.article .author</span> <span class="token punctuation">{</span>
+　　　<span class="token property">font</span><span class="token punctuation">:</span> 14px <span class="token string">&quot;Microsoft YaHei&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* good */</span>
+<span class="token selector">.article</span> <span class="token punctuation">{</span>
+　　　<span class="token property">font</span><span class="token punctuation">:</span> bold 20px <span class="token string">&quot;Microsoft YaHei&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.article .author</span> <span class="token punctuation">{</span>
+　　　<span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">警告</p> <p>在上述例子中，如果需要font-weight继承下去，子级采用简写是无效的，这是因为采用简写时，复合属性里的其他属性将会被重置为 user agent 的默认值，而不是继承父级的值。</p></div> <ul><li>属性书写顺序，推荐使用依次书写<strong>布局</strong>（<code>position/left/top/display/float/z-index</code>），<strong>自身</strong>（<code>width/height/margin/padding/border/outline/background</code>），<strong>字体</strong>（<code>color/font/text-align/line-height</code>），<strong>其他</strong>（<code>transform/transition/user-select/cursor</code>）</li></ul> <div class="tip custom-block"><p class="custom-block-title">注意</p> <p>CSS的书写顺序对于浏览器渲染的性能并无影响，这样做是为了按模块区分CSS代码，尤其是当CSS代码较多时，可以快速定位并修改</p></div> <h2 id="命名规则"><a href="#命名规则" aria-hidden="true" class="header-anchor">#</a> 命名规则</h2> <ul><li>class命名应尽量语义化，如 <strong>.user-info</strong> ,不应使用拼音命名法(约定俗成的除外，如：baidu)。</li> <li>class名称只出现小写字符和破折号&quot;-&quot;，因存在同一个页面混用下划线、驼峰命名法、破折号等乱象，所以我们只选一种目前业内普遍使用的方式。</li> <li>避免过度简写，如 <strong>.btn</strong> 代表 <strong>.button</strong>,但是 <strong>.b</strong> 不具备任何语义。</li> <li>尽量根据内容或功能来命名，而不是根据表现形式去命名，常见的根据表现形式命名的有：<strong>.left</strong>,<strong>.top</strong>,<strong>.big</strong>,<strong>.red</strong>等。</li> <li>推荐的常用class命名参考表如下：</li></ul> <table><thead><tr><th>语义</th> <th>命名</th></tr></thead> <tbody><tr><td>容器</td> <td>wrapper/container</td></tr> <tr><td>页头</td> <td>head/header</td></tr> <tr><td>页脚</td> <td>foot/footer</td></tr> <tr><td>页面主体</td> <td>main</td></tr> <tr><td>侧栏</td> <td>sidebar</td></tr> <tr><td>首页</td> <td>homepage</td></tr> <tr><td>菜单</td> <td>menu</td></tr> <tr><td>二级菜单</td> <td>submenu</td></tr> <tr><td>导航</td> <td>nav</td></tr> <tr><td>二级导航</td> <td>subnav</td></tr> <tr><td>选项卡</td> <td>tab</td></tr> <tr><td>列表</td> <td>list</td></tr> <tr><td>信息介绍</td> <td>info</td></tr> <tr><td>提示信息</td> <td>tips</td></tr> <tr><td>通知信息</td> <td>message/msg</td></tr> <tr><td>搜索输入框</td> <td>search-input</td></tr> <tr><td>箭头</td> <td>arrow</td></tr> <tr><td>登录</td> <td>login</td></tr> <tr><td>标题</td> <td>title/headline</td></tr> <tr><td>按钮</td> <td>button/btn</td></tr> <tr><td>广告位</td> <td>banner</td></tr> <tr><td>标志</td> <td>logo</td></tr> <tr><td>版权</td> <td>copyright</td></tr> <tr><td>活动状态</td> <td>is-active</td></tr> <tr><td>禁用状态</td> <td>is-disabled</td></tr></tbody></table> <h2 id="性能优化"><a href="#性能优化" aria-hidden="true" class="header-anchor">#</a> 性能优化</h2> <ul><li>当使用LESS或SCSS时，嵌套层级尽量不要超过3层，因为过深的选择器层级不仅拖慢了查找性能，也带来了代码维护成本的增加。</li> <li>当出现一组大小相近，数目较多的icon图像时，建议处理成雪碧图来减少http请求数。当制作帧动画时，必须处理成雪碧图。</li> <li>能用CSS可以做到的视觉效果，就不要使用JS去做。尽量用CSS控制交互或视觉的变化，JS只需要更改className来切换效果。</li> <li>当使用animation做动画时，应尽可能使用transform属性，而不是直接修改DOM的位置、大小、宽高等属性，因为后者的性能开销要远大于前者。</li></ul> <div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">/* bad */</span>
+<span class="token atrule">@keyframes move</span> <span class="token punctuation">{</span>
+    <span class="token selector">from</span><span class="token punctuation">{</span><span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">}</span>
+    <span class="token selector">to</span><span class="token punctuation">{</span><span class="token property">left</span><span class="token punctuation">:</span> 100px<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/* good */</span>
+<span class="token atrule">@keyframes move</span> <span class="token punctuation">{</span>
+    <span class="token selector">from</span><span class="token punctuation">{</span><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>0<span class="token punctuation">)</span><span class="token punctuation">}</span>
+    <span class="token selector">to</span><span class="token punctuation">{</span><span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>100px<span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/manual/" class="prev router-link-active">
+          说明
+        </a></span> <span class="next"><a href="/manual/standard/HTML.html">
+          HTML编码规范
+        </a>
+        →
+      </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/manual/assets/js/app.0f33cce5.js" defer></script><script src="/manual/assets/js/2.fc9d38fd.js" defer></script><script src="/manual/assets/js/6.1a5b528c.js" defer></script>
+  </body>
+</html>

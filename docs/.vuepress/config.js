@@ -1,6 +1,6 @@
 module.exports = {
   title: '前端开发规范',
-  base: '/manual/',
+  base: '/specification/',
   themeConfig: {
     head: [
       ['link', { rel: 'icon', href: '/favicon.ico' }]

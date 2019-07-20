@@ -1,0 +1,15 @@
+{
+  "name": "specification",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^1.0.0-alpha.47"
+  },
+  "repository": "git@github.com:zhangnan666/specification.git",
+  "author": "zhangnan <zhangnan35@foxmail.com>",
+  "license": "MIT"
+}
